@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+Live server 
+Dracula Official
+Auto Close Tag
+Auto Rename Tag
+HTML Snippets
+CSS Peek
+HTML CSS Support
+Tailwind CSS IntelliSense
+Better Comments
+Bootstrap 4, Font awesome 4, Font Awesome
+Color Picker
+IntelliSense for CSS class names in HTML
+JavaScript (ES6) code snippets
+=======
+Live server 
+Dracula Official
+Auto Close Tag
+Auto Rename Tag
+HTML Snippets
+CSS Peek
+HTML CSS Support
+Tailwind CSS IntelliSense
+Better Comments
+Bootstrap 4, Font awesome 4, Font Awesome
+Color Picker
+IntelliSense for CSS class names in HTML
+JavaScript (ES6) code snippets
+>>>>>>> b41b262d7e5664f89cbcb6c0c57bb3fa6ebb245c
+Prettier - Code formatter
