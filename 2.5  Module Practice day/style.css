@@ -1,0 +1,27 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* .banner-container {
+    height: 100vh;
+    background-image: url("Image/banner.jpg"), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+
+.title{
+color: red;
+font-size: 100px;
+}
+
+@media only screen and (max-width:375px) {
+    
+    .title{
+        color:green;
+    }
+
+}
