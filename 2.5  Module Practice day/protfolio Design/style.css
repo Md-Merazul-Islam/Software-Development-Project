@@ -1,0 +1,424 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.bg-grd {
+    background-image: url("resources/images.jpg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+.logo {
+    display: flex;
+    margin: 15px;
+    padding-top: 5px;
+}
+
+.logo1 {
+    width: 80px; 
+    /* transition: width 0.3s ease;  */
+}
+
+.logo-name {
+    color: white;
+    margin: 15px;
+}
+
+.menus {
+    color: white;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 35px;
+    padding-top: 5px;
+    font-size: 25px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+   
+.copyright{
+    text-align: center;
+    padding: 15px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ppp{
+    color: black;
+  }
+  .copyright{
+    color: black;
+  }
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+   
+    .menus {
+        flex-direction: column;
+        gap: 10px;
+        margin: 15px;
+    }
+
+    .logo1 {
+        width: 50%; 
+        height:50% ;
+    }
+
+    .logo-name {
+        font-size: 1.5em;
+    }
+}
+
+
+.title{
+    color: white;
+    font-size: 75px;
+
+    text-align:left ;
+    font-weight: bold;
+
+}
+
+.img{
+    width: 500px;
+}
+
+.mid-into{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height:100vh ;
+    width: 80%;
+    align-items: center;
+    /* padding-bottom: 10px; */
+}
+p{
+    color: white;
+    font-size: 20px;
+    
+}
+
+.b1{
+    background:  orangered;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-inline-end: 20px;
+    border: none;
+
+}
+.b2{ background:  rgb(17, 67, 124);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px;
+    border: none;
+
+}
+.social{
+
+    width: 160px;
+    padding-left: 172px;
+     margin: 20px;
+
+}
+.right-side{
+    align-items: center;
+
+}
+.expe {
+    background: #f3e1e1;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.expertice-image {
+    gap: 30px; 
+    padding: 10px;
+    justify-content: space-between;
+    display: flex; 
+    height: 50px;
+}
+
+
+
+h1{
+    color: white;
+}
+
+.title1{
+    color: rgb(1, 1, 1);
+    font-size: 50px;
+
+}
+.box1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px;
+    padding: 20px;
+    background: rgb(32, 6, 74);
+    width: 200px;
+    color: white;
+    border-radius: 10px;
+
+}
+
+.leptop-exp{
+ display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+
+
+.leppp{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    padding-right: 300px;
+}
+
+.button{
+
+    width: 333px;
+  padding-left: 100px;
+}
+
+
+/* --foter */
+
+ 
+footer {
+    background-color:#f3e1e1 ;
+    color:rgb(221, 73, 73);
+    padding: 50px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-content {
+    flex-basis: 45%;
+  }
+  
+  .footer-content h2 {
+    font-size: 20px;
+  }
+  
+  .footer-content p {
+    font-size: 16px;
+  }
+  
+  .footer-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-content ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-content ul li a {
+  color: black;
+    text-decoration: none;
+  }
+  
+  .footer-content ul li a:hover {
+    text-decoration: underline;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-content {
+      flex-basis: auto;
+      margin-bottom: 30px;
+    }
+
+
+
+    
+.title{
+    color: white;
+    font-size: 50px;
+
+    text-align:left ;
+    font-weight: bold;
+
+}
+
+.img{
+    width: 300px;
+}
+
+.mid-into{
+  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    height:100vh ;
+    width: 80%;
+    align-items: center;
+}
+p{
+    color: white;
+    font-size: 15px;
+    
+}
+
+.b1{
+    background:  orangered;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px;
+    border: none;
+
+}
+.b2{ background:  rgb(17, 67, 124);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px;
+    border: none;
+
+}
+.social{
+
+    width: 160px;
+    padding-left: 50px;
+    margin: 20px;
+
+}
+.right-side{
+    align-items: center;
+    flex-direction: column;
+
+}
+.expe {
+    padding-top: 50px;
+    background: #f3e1e1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+.title1{
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.expertice-image {
+    gap: 30px; 
+    padding: 10px;
+    justify-content: space-between;
+    display: flex; 
+    height: 100vh;
+    flex-direction: column;
+}
+
+
+
+
+h1{
+    color: white;
+}
+
+.box1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px;
+    padding: 20px;
+    background: rgb(32, 6, 74);
+    width: 200px;
+    color: white;
+    border-radius: 10px;
+
+}
+
+.leptop-exp{
+    display: flex;
+    justify-content: space-around; */
+     align-items: center;
+    padding-top: 100px;
+    flex-direction: column;
+}
+
+
+
+.leppp{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    padding-left: 298px;
+
+}
+
+
+
+
+   
+  .copyright{
+    text-align: center;
+    padding: 15px;
+  }
+
+  .ppp{
+    color: black;
+  }
+  .copyright{
+    color: black;
+  }
+}
