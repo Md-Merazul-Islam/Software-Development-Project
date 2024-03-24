@@ -1,0 +1,22 @@
+.nav-item a{
+    font-size: 20px;
+    color: antiquewhite;
+    
+}
+.nav-item{
+ padding-inline: 20px;
+    
+}
+
+.body-part{
+   background:#18736D;
+
+    height: 100vh;
+
+}
+
+.left-info h1{
+    font-size: 50px;
+ 
+    color: white;
+}
