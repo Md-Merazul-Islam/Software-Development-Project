@@ -159,7 +159,6 @@
 
 
 /* category  */
-
 .cont {
     display: flex;
     flex-wrap: wrap;
@@ -167,12 +166,20 @@
 }
 
 .box {
-    flex: 0 0 calc(16.666666666666666666666666666667% - 20px); /* Adjust the width for large screens */
+    flex: 0 0 calc(16.666666666666666666666666666667% - 20px); /*big screen*/
     max-width: calc(33.333% - 20px);
     margin: 10px;
     padding: 20px;
     text-align: center;
     border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Add hover effect */
+.box:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 /* Adjust layout for small screens */
@@ -182,3 +189,8 @@
         max-width: calc(50% - 20px);
     }
 }
+
+
+
+
+/* --------------------- card----------*/
