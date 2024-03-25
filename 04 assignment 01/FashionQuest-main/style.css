@@ -193,4 +193,34 @@
 
 
 
-/* --------------------- card----------*/
+/* --------- last banner  */
+
+.container-last{
+background: #958AD4;
+}
+
+.container-last {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-sd, .middle-sd, .right-sd {
+    flex: 1;
+    margin: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .left-sd, .middle-sd, .right-sd {
+      flex: 1 1 100%;
+      margin: 30px;
+    }
+  }
+
