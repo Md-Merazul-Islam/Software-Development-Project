@@ -1,0 +1,175 @@
+/* navbar style  */
+*{
+    font-family: "Montserrat", sans-serif;
+}
+.navbar {
+    background-color: #1A187A;
+
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.search-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto; 
+    padding-left: 500px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+}
+
+.search-box input[type="text"] {
+    border: none;
+    outline: none;
+    padding-left: 5px;
+}
+
+.collapse li{
+   padding-inline: 20px;
+}
+.collapse a{
+    font-size: 20px;
+
+}
+
+/* Animation for underline */
+.navbar-nav .nav-link {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fefefe; 
+}
+
+@media (max-width: 992px) {
+    .search-box-container {
+        display: none;
+    }
+}
+
+
+
+.details h1{
+    font-size: 96px;
+   font-weight: 400;
+   text-align: left;
+}
+
+.sec1{
+    background: linear-gradient(135deg, #F8DBF7, #8A95FA);
+    height: 80%;
+}
+
+.ex{
+    /* padding-left: 282px; */
+    margin: auto;
+}
+
+.btn{
+    background: #171495;
+    color: white;
+    padding: 10px 15px;
+  
+    
+}
+
+.carousel-item{
+    padding: 30px 50px;
+}
+
+@media (max-width: 992px) {
+   
+}
+
+.section2{
+    background: linear-gradient(135deg, #F8DBF7, #8A95FA);
+    height: 100vh;
+}
+
+
+.rowss{
+  width: 100%;
+}
+
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .left, .right-column {
+    flex: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+    }
+  }
+  
+  
+  .box1{
+    padding: 10px;
+    margin: 30px;
+  }
+
+  @media (min-width: 1200px) { 
+    .category-item {
+        width: 60%;
+
+    }
+}
+.category-item {
+    width: auto; 
+    flex: 1 1 auto; 
+    cursor: pointer; 
+}
+/* Hover effect */
+.category-item:hover {
+    border-color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----

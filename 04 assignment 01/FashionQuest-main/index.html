@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+  <!-- navbar  -------------------------------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./resources/logo .png" alt="Logo">
+        </a>
+        <div class="search-box-container navbar-center ">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Main Content  -------------------------------->
+
+    <!-- carasol -->
+    <section class="sec1">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+
+
+          <div class="carousel-item active">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-6">
+                <div class="ex">
+                  <h1 class="h-100" style="font-weight: bold;">iPhone 14 Pro Max — Gold Edition </h1>
+                  <p class="">
+                    The iPhone 14 Pro Max Gold Edition combines elegance with cutting-edge technology, offering a
+                    premium user experience in a sleek, gold-accented design.</p>
+                  <h4 class="h-75">$1290</h4>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <!-- Image -->
+                <img src="./resources/iPhone_14_Pro_Max_Gold_phonewall.png" class="imgg d-block  w-100 py-3" alt="">
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="carousel-item active">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-6">
+                <div class="ex">
+                  <h1 class="h-100" style="font-weight: bold;">iPhone 15 Pro Max </h1>
+                  <p class="">A huge leap forward for iPhone with a gorgeous new design featuring a durable,
+                    color-infused back glass and new contoured edge; the Dynamic Island; a 48MP Main camera with 2x
+                    Telephoto; and USB‑C. </p>
+                  <h2 class="h-75">$1100</h2>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <!-- Image -->
+                <img src="./resources/iphone-15-colours-card.png" class="imgg d-block  w-100 py-3" alt="">
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="carousel-item active">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-6">
+                <div class="ex">
+                  <h1 class="h-100" style="font-weight: bold;">iPhone 14 Pro Max </h1>
+                  <p class="">The iPhone 14 Pro comes with a 6.1-inch ProMotion OLED display with 1-120Hz adaptive
+                    refresh rates, Dolby Vision, and a Face ID Dynamic Island that allows.</p>
+                  <h2 class="h-75">$1199</h2>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <!-- Image -->
+                <img src="./resources/Iphone 14 pro 1-2.png" class="imgg d-block  w-100 py-3" alt="">
+              </div>
+            </div>
+          </div>
+
+
+
+          <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next " type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    </section>
+
+
+    <!-- section 2 -->
+    <section class="d-flex">
+      <div class="banner d-flex h-auto col ">
+        <div class="left row-4">
+          <div class="row g-0 bg-light position-center">
+            <div class="col-md-6 mb-md-0 p-md-4">
+              <img src="./resources/ipad.png" class="w-50 align-items-center" alt="...">
+            </div>
+            <div class="col-md-6 p-4 ps-md-0 m-auto">
+              <h1 class="mt-0">
+                Apple AirPods
+                Max </h1>
+              <p>Introducing the iPad 9: Sleek design, powerful performance. Enhance productivity, immerse in
+                entertainment. Capture memories, stay organized. Endless apps for customization. Welcome to the future.
+                .</p>
+            </div>
+          </div>
+          <div class="row g-0 bg-light position-center">
+            <div class="col-md-6 mb-md-0 p-md-4">
+              <img src="./resources/airpot.png" class="w-50" alt="...">
+            </div>
+            <div class="col-md-6 p-4 ps-md-0 m-auto">
+              <h1 class="mt-0">Apple AirPods
+                Max </h1>
+              <p>Luxurious design, wireless convenience. Apple AirPods Max redefine audio experience. </p>
+            </div>
+          </div>
+        </div>
+        <div class="right-column row-4 ">
+          <div class="row3 g-0 bg-light position-center d-flex">
+            <div class="col-md-6 p-4 ps-md-0 m-auto">
+              <h1 class="mt-0">Macbook Air</h1>
+              <p>Sleek design, powerful performance, stunning display. Ultimate portability. Perfect for work,
+                entertainment, and everything in between. </p>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+            <div class="col-md-6 mb-md-0 p-md-4 m-lg-auto">
+              <img src="./resources/laptop.png" class="w-100" alt="...">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      </div>
+
+      </div>
+
+
+    </section>
+
+    <section class="lg:grid md:grid grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-8 mt-12">
+      <div class="category">
+          <h1 class="text-center p-4">Browse By Category</h1>
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <div class="item-box border rounded p-3 text-center mb-4">
+                          <img src="icon/Icon_Phones.png" class="img-fluid" alt="Phones">
+                          <h2 class="mt-2">Phones</h2>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="item-box border rounded p-3 text-center mb-4">
+                          <img src="icon/Icon_Smart Watches.png" class="img-fluid" alt="Smart Watches">
+                          <h2 class="mt-2">Smart Watches</h2>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="item-box border rounded p-3 text-center mb-4">
+                          <img src="icon/Icon_Cameras.png" class="img-fluid" alt="Cameras">
+                          <h2 class="mt-2">Cameras</h2>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="item-box border rounded p-3 text-center mb-4">
+                          <img src="icon/Icon_Headphones.png" class="img-fluid" alt="Headphones">
+                          <h2 class="mt-2">Headphones</h2>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="item-box border rounded p-3 text-center mb-4">
+                          <img src="icon/Icon_Computers.png" class="img-fluid" alt="Computers">
+                          <h2 class="mt-2">Computers</h2>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="item-box border rounded p-3 text-center mb-4">
+                          <img src="icon/Icon_Gaming.png" class="img-fluid" alt="Gaming">
+                          <h2 class="mt-2">Gaming</h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+  <section>
+
+  </section>
+  
+
+
+  </main>
+
+  <footer>
+    <!-- Footer Content Goes Here -->
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

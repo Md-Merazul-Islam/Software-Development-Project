@@ -16,7 +16,20 @@
 }
 
 .left-info h1{
-    font-size: 50px;
- 
+    font-size: 70px;
+    font-weight: bold;
     color: white;
+}
+.left-info p{
+    font-size: 20px;
+    color: white;
+}
+
+.min-fs{
+    background-color: #18736D;
+    height: 100vh;
+}
+
+.btn{
+    background:#092d43;
 }
