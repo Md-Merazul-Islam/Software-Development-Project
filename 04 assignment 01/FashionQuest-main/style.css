@@ -158,18 +158,27 @@
 
 
 
+/* category  */
 
+.cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.box {
+    flex: 0 0 calc(16.666666666666666666666666666667% - 20px); /* Adjust the width for large screens */
+    max-width: calc(33.333% - 20px);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-----
+/* Adjust layout for small screens */
+@media (max-width: 768px) {
+    .box {
+        flex: 0 0 calc(50% - 20px); /* Two columns on small screens */
+        max-width: calc(50% - 20px);
+    }
+}
