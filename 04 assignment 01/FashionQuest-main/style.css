@@ -224,3 +224,37 @@ background: #958AD4;
     }
   }
 
+
+
+.right-column{
+    display: flex;
+}
+
+.right-column {
+    padding: 20px;
+  }
+
+  /* Media query for small screens */
+  @media (max-width: 768px) {
+  
+    .right-column {
+      padding: 20px;
+    
+    }
+    .col-md-5,
+    .col-md-6 {
+      width: 100%;
+    }
+    .col-md-5 {
+      order: 2; /* Move this column below */
+    }
+    .col-md-6 {
+      order: 1; /* Move this column above */
+    }
+    .col-md-5 p {
+      text-align: center; /* Center the description */
+    }
+    .btn {
+      width: 100%; /* Make button full width */
+      margin-top: 20px; /* Add space between description and button */
+    }
