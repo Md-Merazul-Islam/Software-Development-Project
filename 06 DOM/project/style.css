@@ -1,0 +1,40 @@
+
+.container{
+
+    
+    gap: 20px;
+    height: 200px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 6px gray;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.count{
+    font-size: 60px;
+}
+
+.btn{
+    background: #f41a1a;
+    padding: 10px 25px ;
+    border-radius: 5px;
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+
+}
+.btn:hover{
+    background: #0ea8c7;
+    box-shadow:4px 4px 8px rgb(9, 236, 39);
+}
+
+.in{
+    height: 45px;
+    width: 200px;
+    margin: 10px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+   <section class="section flex text-white justify-center text-center">
+    <div class=" container deposite mt-6 bg-cyan-400 text-center justify-center ">
+        <div id="Deposit-Amount" class="count  font-bold ">00</div>
+        <div class="title">Deposit</div>
+    </div>
+    <div class=" container withdraw bg-blue-600 text-center justify-center">
+        <div id="Withdraw-Amount" class="count  font-bold">00</div>
+        <div class="title">withdraw</div>
+    </div>
+    <div class=" container total bg-green-400 text-center justify-center">
+        <div id ="Total-balance" class="count  font-bold">00</div>
+        <div class="title">Total</div>
+    </div>
+   </section>
+
+   <section class="flex justify-center text-center pt-52">
+    <div class="com  border-2 w-96 border-red-900 justify-center align-middle text-center m-5 bg-violet-600">
+        <div class="input ">
+            <input class="in" id="Deposit-Input" type="number">
+        </div>
+        <div class="btn-div">
+            <button onclick="HandelDeposit()" class="btn">Deposit </button>
+        </div>
+    </div>
+    
+    <div class="com  border-2 w-96 border-red-900 justify-center align-middle text-center m-5  bg-violet-600">
+        <div  class="input ">
+            <input class="in" id="withdraw-input" type="number">
+        </div>
+        <div class="btn-div" >
+
+            <button onclick=" HandelWithdraw()" class="btn">Withdraw</button>
+        </div>
+    </div>
+
+   </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
