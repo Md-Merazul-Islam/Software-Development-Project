@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,42 +9,66 @@
 <style>
     body {
         font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
     }
     .container {
         max-width: 800px;
-        margin: 0 auto;
+        margin: 20px auto;
         padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
     h1 {
         text-align: center;
     }
     .video-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         list-style-type: none;
         padding: 0;
     }
-    .video-item {
+    .video-card {
+        flex-basis: calc(25% - 20px); /* Four cards per row */
         margin-bottom: 20px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        overflow: hidden;
+        box-sizing: border-box;
     }
     .video-thumbnail {
         width: 100%;
-        max-width: 200px;
         height: auto;
-        float: left;
-        margin-right: 10px;
+    }
+    .video-details {
+        padding-top: 10px;
+    }
+    .video-title {
+        margin: 0;
+    }
+    .video-author {
+        margin: 5px 0;
+    }
+    .video-views {
+        margin: 5px 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        .video-card {
+            flex-basis: calc(100% - 20px); /* One card per row on smaller screens */
+        }
     }
 </style>
 </head>
 <body>
 <div class="container">
     <h1>Programming Hero Videos</h1>
-    <div id="videos-container"></div>
+    <ul class="video-list" id="video-list"></ul>
 </div>
 
 <script>
+    // Fetch data from API
     fetch('https://openapi.programming-hero.com/api/videos/categories')
         .then(response => response.json())
         .then(categories => {
@@ -66,38 +92,41 @@
     }
 
     function displayVideos(videos) {
-        const videosContainer = document.getElementById('videos-container');
-
-        const videoList = document.createElement('ul');
-        videoList.classList.add('video-list');
+        const videoList = document.getElementById('video-list');
 
         videos.forEach(video => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('video-item');
+            const videoCard = document.createElement('li');
+            videoCard.classList.add('video-card');
 
             const thumbnailImg = document.createElement('img');
             thumbnailImg.classList.add('video-thumbnail');
             thumbnailImg.src = video.thumbnail;
             thumbnailImg.alt = video.title;
 
+            const videoDetails = document.createElement('div');
+            videoDetails.classList.add('video-details');
+
             const title = document.createElement('h3');
+            title.classList.add('video-title');
             title.textContent = video.title;
 
             const author = document.createElement('p');
+            author.classList.add('video-author');
             author.textContent = `Author: ${video.authors[0].profile_name}`;
 
             const views = document.createElement('p');
+            views.classList.add('video-views');
             views.textContent = `Views: ${video.others.views}`;
 
-            listItem.appendChild(thumbnailImg);
-            listItem.appendChild(title);
-            listItem.appendChild(author);
-            listItem.appendChild(views);
+            videoDetails.appendChild(title);
+            videoDetails.appendChild(author);
+            videoDetails.appendChild(views);
 
-            videoList.appendChild(listItem);
+            videoCard.appendChild(thumbnailImg);
+            videoCard.appendChild(videoDetails);
+
+            videoList.appendChild(videoCard);
         });
-
-        videosContainer.appendChild(videoList);
     }
 </script>
 </body>
