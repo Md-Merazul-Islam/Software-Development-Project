@@ -1,0 +1,10 @@
+.fullwebsite{
+    max-width: 1200px;
+    margin:  0px auto;
+    padding: 5px;
+}
+
+.font-sizes{
+    font-size: 20px;
+    background: #ff6803;
+}
