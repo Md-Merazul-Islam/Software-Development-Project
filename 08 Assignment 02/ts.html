@@ -122,6 +122,27 @@
         }
 
         /* Rest of your existing styles */
+        .author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .author-name {
+            margin-right: 10px;
+        }
+
+        .verified-icon {
+            width: 20px;
+            height: auto;
+        }
+
         .author img {
             width: 30px;
             height: 30px;
@@ -255,31 +276,35 @@
                 const title = document.createElement('h3');
                 title.textContent = video.title;
 
-                const authors = document.createElement('div');
-                authors.classList.add('author');
-                video.authors.forEach(function (author) {
-                    const authorImg = document.createElement('img');
-                    authorImg.src = author.profile_picture;
-                    authors.appendChild(authorImg);
+                const author = document.createElement('div');
+                author.classList.add('author');
 
-                    const authorName = document.createElement('span');
-                    authorName.textContent = author.profile_name;
-                    authors.appendChild(authorName);
+                const profileImage = document.createElement('img');
+                profileImage.src = video.authors[0].profile_picture;
+                profileImage.alt = video.authors[0].profile_name;
+                profileImage.classList.add('profile-image');
 
-                    if (author.verified) {
-                        const verifiedIcon = document.createElement('img');
-                        verifiedIcon.src = 'verify.png'; // Provide path to your verified icon
-                        verifiedIcon.classList.add('verified-icon');
-                        authors.appendChild(verifiedIcon);
-                    }
-                });
+                const authorName = document.createElement('span');
+                authorName.textContent = video.authors[0].profile_name;
+                authorName.classList.add('author-name');
+
+                const verifiedIcon = document.createElement('img');
+                verifiedIcon.src = video.authors[0].verified ? 'verify.png' : '';
+                verifiedIcon.alt = 'Verified';
+                verifiedIcon.classList.add('verified-icon');
+
+                author.appendChild(profileImage);
+                author.appendChild(authorName);
+                if (video.authors[0].verified) {
+                    author.appendChild(verifiedIcon);
+                }
 
                 const views = document.createElement('p');
                 views.textContent = `Views: ${video.others.views}`;
 
                 videoCard.appendChild(thumbnail);
                 videoCard.appendChild(title);
-                videoCard.appendChild(authors);
+                videoCard.appendChild(author);
                 videoCard.appendChild(views);
 
                 videoListContainer.appendChild(videoCard);
