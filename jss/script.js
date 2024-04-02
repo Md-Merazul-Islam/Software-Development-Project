@@ -6,14 +6,10 @@ async function fetchCategories() {
     try {
         const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
         const data = await response.json();
-        if (data.status == false) {
-            displayErrorMessage();
-            return;
-        }
         displayCategories(data.data);
-        // Display video data for the first category
         const categoryData = await fetchCategoryData(data.data[0].category_id);
         displayVideo(categoryData);
+
     } catch (error) {
         console.error('Error fetching categories:', error);
     }
@@ -66,50 +62,54 @@ function displayVideo(videos) {
     const videoListContainer = document.querySelector('.video-list');
     videoListContainer.innerHTML = "";
 
-    videos.forEach(video => {
-        const isVerified = video.authors[0].verified ? '<img class="verified-icon w-5 h-auto" src="./icon/verify.png" alt="Verified">' : '';
-
-        const videoCard = `
-            <div class="video-card">
-                <figure class="relative">
-                    <img class="thumbnail" src="${video.thumbnail}" alt="${video.title}">
-                    <div class="absolute bottom-3 right-3 text-white text-xs bg-[#171717] p-0.5 rounded-md">
-                        <span>${video.others.duration}</span> <!-- Replace this with the actual video duration -->
-                    </div>
-                </figure>
-                <div class="flex gap-3 mt-5">
-                    <div class="w-fit mt-0.5">
-                        <img class="profile-image w-8 h-8 rounded-full mr-2" src="${video.authors[0].profile_picture}" alt="${video.authors[0].profile_name}">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-neutral-950 max-w-prose line-clamp-2 font-bold text-base ">${video.title}</h3>
-                        <div class="flex gap-2 mt-2 mb-2 items-center">
-                            <span class="text-sm text-heroText">${video.authors[0].profile_name}</span>
-                            ${isVerified}
+    if (videos.length == 0) {
+        displayErrorMessage();
+        return;
+    }
+    else {
+        videos.forEach(video => {
+            const isVerified = video.authors[0].verified ? '<img class="verified-icon w-5 h-auto" src="./icon/verify.png" alt="Verified">' : '';
+            const videoCard = `
+                <div class="video-card">
+                    <figure class="relative">
+                        <img class="thumbnail" src="${video.thumbnail}" alt="${video.title}">
+                        <div class="absolute bottom-3 right-3 text-white text-xs bg-[#171717] p-0.5 rounded-md">
+                            <span>${video.others.duration}</span> <!-- Replace this with the actual video duration -->
                         </div>
-                        <p class="text-xs text-gray-500">${video.others.views} views</p>
+                    </figure>
+                    <div class="flex gap-3 mt-5">
+                        <div class="w-fit mt-0.5">
+                            <img class="profile-image w-8 h-8 rounded-full mr-2" src="${video.authors[0].profile_picture}" alt="${video.authors[0].profile_name}">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-neutral-950 max-w-prose line-clamp-2 font-bold text-base ">${video.title}</h3>
+                            <div class="flex gap-2 mt-2 mb-2 items-center">
+                                <span class="text-sm text-heroText">${video.authors[0].profile_name}</span>
+                                ${isVerified}
+                            </div>
+                            <p class="text-xs text-gray-500">${video.others.views} views</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
-        videoListContainer.insertAdjacentHTML('beforeend', videoCard);
-    });
+            `;
+            videoListContainer.insertAdjacentHTML('beforeend', videoCard);
+        });
+    }
+
 }
 
 
 function getFormattedDuration(duration) {
 
     const seconds = parseInt(duration);
-
     const formattedDuration = new Date(seconds * 1000).toISOString().substr(11, 8);
     return formattedDuration;
 
 }
 
 function displaySortedVideo(videos) {
-    // Sort videos by views in descending order
+ 
     videos.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
-
     const videoListContainer = document.querySelector('.video-list');
     videoListContainer.innerHTML = "";
 
@@ -126,4 +126,4 @@ function displayErrorMessage() {
         <h1 class="flex items-center my-5 justify-center font-bold">Oops!! Sorry, There is no content here.</h1>
     `;
     errorMessage.classList.remove('hidden');
-}
+} 
