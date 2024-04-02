@@ -1,3 +1,5 @@
+let issorting =false;
+
 document.addEventListener('DOMContentLoaded', function () {
     fetchCategories();
 });
@@ -64,6 +66,8 @@ function displayVideo(videos) {
         return;
     }
     else {
+
+
         videos.forEach(video => {
             const isVerified = video.authors[0].verified ? '<img class="verified-icon w-5 h-auto" src="./icon/verify.png" alt="Verified">' : '';
             const videoCard = `
@@ -71,7 +75,7 @@ function displayVideo(videos) {
                     <figure class="relative">
                         <img class="thumbnail" src="${video.thumbnail}" alt="${video.title}">
                         <div class="absolute bottom-3 right-3 text-white text-xs bg-[#171717] p-0.5 rounded-md">
-                            <span>${video.others.duration}</span> <!-- Replace this with the actual video duration -->
+                            <span>${video.others.duration}</span> 
                         </div>
                     </figure>
                     <div class="flex gap-3 mt-5">
@@ -106,18 +110,6 @@ function getFormattedDuration(duration) {
 
 
 
-function displaySortedVideo(videos) {
- 
-    videos.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
-    const videoListContainer = document.querySelector('.video-list');
-    videoListContainer.innerHTML = "";
-
-    videos.forEach(video => {
-        const videoCard = displayVideoCard(video);
-        videoListContainer.insertAdjacentHTML('beforeend', videoCard);
-    });
-}
-
 function displayErrorMessage() {
     const errorMessage = document.getElementById('error-message');
     errorMessage.innerHTML = `
@@ -126,3 +118,10 @@ function displayErrorMessage() {
     `;
     errorMessage.classList.remove('hidden');
 } 
+
+
+
+
+function HandelSort(){
+    console.log("hello");
+}
