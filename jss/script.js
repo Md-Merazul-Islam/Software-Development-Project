@@ -44,12 +44,9 @@ async function displayCategories(categories) {
             try {
                 const categoryData = await fetchCategoryData(category.category_id);
                 displayVideo(categoryData);
-
-                // remove bg 
                 document.querySelectorAll('.nav-btn').forEach(button => button.classList.remove('bg-orange-500'));
                 navButton.classList.add('bg-orange-500');
             } catch (error) {
-                displayErrorMessage();
                 console.error('Error fetching category data:', error);
             }
         });
@@ -106,6 +103,8 @@ function getFormattedDuration(duration) {
     return formattedDuration;
 
 }
+
+
 
 function displaySortedVideo(videos) {
  
