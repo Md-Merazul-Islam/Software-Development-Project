@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ph Tube</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background-image: url("./icon/blog.jpg");
+            background-color: white; /* Set background color to white */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div class="collapse-title text-xl font-medium">
+            Scope of var, let, and const:
+        </div>
+        <div class="collapse-content">
+            <ul>
+                <li><span class="font-bold">Var </span> : Function scope or global scope, hoisted to the top of their
+                    containing function or script. </li>
+                <li><span class="font-bold">Let </span> : Block scope,not hoisted, can be reassigned but not redeclare
+                    withing the same scope.</li>
+                <li><span class="font-bold">Const </span> : Block scope,not hoisted, must be initialized at
+                    declared,cannot be reassigned,but does not mean immutably of the value.</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+            Use cases of null and undefined:
+        </div>
+        <div class="collapse-content">
+            <ul>
+                <li><span class="font-bold">Null </span> : When a value is expected to be an object but is not yet
+                    defined.</li>
+                <li><span class="font-bold">Undefined </span> : Indicates that a variable has been declared but not
+                    initialized. It's also the default value of uninitialized.</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">
+            REST API:
+        </div>
+        <div class="collapse-content">
+            <p>An API is a set of definitions and protocols for building and integrating application software. It’s
+                sometimes referred to as a contract between an information provider and an information user—establishing
+                the content required from the consumer (the call) and the content required by the producer (the
+                response). For example, the API design for a weather service could specify that the user supply a zip
+                code and that the producer reply with a 2-part answer, the first being the high temperature, and the
+                second being the low. </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

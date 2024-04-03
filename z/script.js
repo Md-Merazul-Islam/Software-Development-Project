@@ -8,16 +8,33 @@ const handleCategories = async () => {
   displayCategories(categories);
 };
 
+
+
 const displayCategories = (categories) => {
   const categoriesContainer = document.getElementById("categories-container");
-  categories.forEach((singleCategory) => {
+  categories.forEach((singleCategory, index) => {
     const append_div = document.createElement('div');
-    append_div.innerHTML = `
-        <button onclick="singleCategoriesLoad('${singleCategory.category_id}')">${singleCategory.category}</button>
-        `;
-    categoriesContainer.appendChild(append_div);
+    const button = document.createElement('button'); 
+    button.textContent = singleCategory.category;
+    button.classList.add('category-button');
+
+    // Check if it's the first button
+    if (index === 0) {
+      button.classList.add('active');
+    }
+
+    button.onclick = () => {
+      document.querySelectorAll('.category-button').forEach(button => {
+        button.classList.remove('active');
+      });
+      button.classList.add('active');
+      singleCategoriesLoad(singleCategory.category_id);
+    };
+    append_div.appendChild(button);
+    categoriesContainer.appendChild(append_div); 
   });
 };
+
 
 const singleCategoriesLoad = async (categoryId) => {
   const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
@@ -65,13 +82,9 @@ const displaySingleCategory = () => {
     const h = Math.floor(totalSnd / 3600);
     const remsnd = totalSnd % 3600;
     const minute = Math.floor(remsnd / 60);
-
     const div = document.createElement('div');
     const isVerified = singleCategory.authors[0].verified ? '<img class="verified-icon w-5 h-auto" src="./icon/verify.png" alt="Verified">' : '';
-
     div.innerHTML = `
-
-
     <div class="card class="h-fit rounded-lg"">
       <!-- thumbnail -->
       <figure class="w-full min-h-[100px] h-full   sm:h-[200px] relative">
@@ -98,10 +111,6 @@ const displaySingleCategory = () => {
       </div>
     </div>
 
-
-
-        
-       
       `;
     singleCategoryContainer.appendChild(div);
   });
