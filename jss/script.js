@@ -1,31 +1,25 @@
-let issorting =false;
+let videosData = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     fetchCategories();
 });
 
 async function fetchCategories() {
-    try {
-        const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
-        const data = await response.json();
-        displayCategories(data.data);
-        const categoryData = await fetchCategoryData(data.data[0].category_id);
-        displayVideo(categoryData);
 
-    } catch (error) {
-        console.error('Error fetching categories:', error);
-    }
+    const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
+    const data = await response.json();
+    displayCategories(data.data);
+    const categoryData = await fetchCategoryData(data.data[0].category_id);
+    videosData = categoryData;
+    displayVideo(videosData);
+
 }
-
-
 
 async function fetchCategoryData(categoryId) {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await response.json();
     return data.data;
 }
-
-
 
 async function displayCategories(categories) {
     const navButtonsContainer = document.querySelector('.container');
@@ -43,19 +37,16 @@ async function displayCategories(categories) {
             firstClick = false;
         }
         navButton.addEventListener('click', async () => {
-            try {
-                const categoryData = await fetchCategoryData(category.category_id);
-                displayVideo(categoryData);
-                document.querySelectorAll('.nav-btn').forEach(button => button.classList.remove('bg-orange-500'));
-                navButton.classList.add('bg-orange-500');
-            } catch (error) {
-                console.error('Error fetching category data:', error);
-            }
+
+            const categoryData = await fetchCategoryData(category.category_id);
+            videosData = categoryData;
+            displayVideo(videosData);
+            document.querySelectorAll('.nav-btn').forEach(button => button.classList.remove('bg-orange-500'));
+
         });
         navButtonsContainer.appendChild(navButton);
     });
 }
-
 
 function displayVideo(videos) {
     const videoListContainer = document.querySelector('.video-list');
@@ -64,10 +55,7 @@ function displayVideo(videos) {
     if (videos.length == 0) {
         displayErrorMessage();
         return;
-    }
-    else {
-
-
+    } else {
         videos.forEach(video => {
             const isVerified = video.authors[0].verified ? '<img class="verified-icon w-5 h-auto" src="./icon/verify.png" alt="Verified">' : '';
             const videoCard = `
@@ -96,19 +84,17 @@ function displayVideo(videos) {
             videoListContainer.insertAdjacentHTML('beforeend', videoCard);
         });
     }
-
 }
 
-
-function getFormattedDuration(duration) {
-
-    const seconds = parseInt(duration);
-    const formattedDuration = new Date(seconds * 1000).toISOString().substr(11, 8);
-    return formattedDuration;
-
+function HandelSort() {
+    if (!issorting) {
+        videosData.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
+    } else {
+        videosData.sort((a, b) => parseInt(a.others.views) - parseInt(b.others.views));
+    }
+    issorting = !issorting;
+    displayVideo(videosData);
 }
-
-
 
 function displayErrorMessage() {
     const errorMessage = document.getElementById('error-message');
@@ -117,11 +103,4 @@ function displayErrorMessage() {
         <h1 class="flex items-center my-5 justify-center font-bold">Oops!! Sorry, There is no content here.</h1>
     `;
     errorMessage.classList.remove('hidden');
-} 
-
-
-
-
-function HandelSort(){
-    console.log("hello");
 }
