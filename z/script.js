@@ -125,5 +125,5 @@ handleCategories();
 singleCategoriesLoad('1000');
 
 const handleBlog = () => {
-  location.href = 'blog.html';
+  window.open('blog.html', '_blank');
 };
